@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WWTravelClubDBCosmo\WWTravelClubDBCosmo.csproj" />
     <ProjectReference Include="..\WWTravelClubDB\WWTravelClubDB.csproj" />
   </ItemGroup>
 
