@@ -14,10 +14,7 @@ namespace WWTravelClubDB
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Destination>()
-                .HasMany(m => m.Packages)
-                .WithOne(m => m.MyDestination)
-                .HasForeignKey(m => m.DestinationId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OwnsMany(m => m.Packages);
 
             builder.Entity<Destination>()
                 .HasIndex(m => m.Country);
