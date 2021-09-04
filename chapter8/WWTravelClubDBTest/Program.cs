@@ -17,36 +17,40 @@ namespace WWTravelClubDBTest
             var context = new LibraryDesignTimeDbContextFactory()
                 .CreateDbContext();
 
-            //var firstDestination = new Destination
-            //{
-            //    Name = "Florence",
-            //    Country = "Italy",
-            //    Packages = new List<Package>()
-            //    {
-            //        new Package
-            //        {
-            //            Name = "Summer in Florence",
-            //            StartValidityDate = new DateTime(2019, 6, 1),
-            //            EndValidityDate = new DateTime(2019, 10, 1),
-            //            DurationInDays = 7,
-            //            Price = 1000
-            //        },
-            //        new Package
-            //        {
-            //            Name = "Winter in Florence",
-            //            StartValidityDate = new DateTime(2019, 12, 1),
-            //            EndValidityDate = new DateTime(2020, 2, 1),
-            //            DurationInDays = 7,
-            //            Price = 500
-            //        }
-            //    }
-            //};
+            context.Database.EnsureCreated();
+            var firstDestination = new Destination()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "Florence",
+                Country = "Italy",
+                Packages = new List<Package>()
+                {
+                    new Package
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        Name = "Summer in Florence",
+                        StartValidityDate = new DateTime(2019, 6, 1),
+                        EndValidityDate = new DateTime(2019, 10, 1),
+                        DurationInDays = 7,
+                        Price = 1000
+                    },
+                    new Package
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        Name = "Winter in Florence",
+                        StartValidityDate = new DateTime(2019, 12, 1),
+                        EndValidityDate = new DateTime(2020, 2, 1),
+                        DurationInDays = 7,
+                        Price = 500
+                    }
+                }
+            };
 
-            //context.Destinations.Add(firstDestination);
-            //context.SaveChanges();
+            context.Destinations.Add(firstDestination);
+            context.SaveChanges();
 
-            //Console.WriteLine("DB populated: first destination id is " + firstDestination.Id);
-            //Console.ReadKey();
+            Console.WriteLine("DB populated: first destination id is " + firstDestination.Id);
+            Console.ReadKey();
 
             //var toModify = context.Destinations
             //    .Where(m => m.Name == "Florence")
@@ -66,7 +70,9 @@ namespace WWTravelClubDBTest
             //Console.ReadKey();
 
             var period = new DateTime(2019, 8, 10);
-            var list = context.Packages
+            var list = context.Destinations
+                .AsEnumerable()
+                .SelectMany(m => m.Packages)
                 .Where(m => period >= m.StartValidityDate && period <= m.EndValidityDate)
                 .Select(m => new PackagesListDTO
                 {

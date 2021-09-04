@@ -21,13 +21,6 @@ namespace WWTravelClubDB
 
             builder.Entity<Destination>()
                 .HasIndex(m => m.Name);
-
-            builder.Entity<Package>()
-                .HasIndex(m => m.Name);
-
-            builder.Entity<Package>()
-                .HasIndex(nameof(Package.StartValidityDate),
-                            nameof(Package.EndValidityDate));
         }
 
     }
