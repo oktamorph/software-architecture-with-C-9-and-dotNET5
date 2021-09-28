@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackagesManagement", "Packa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackagesManagementDomain", "..\PackagesManagementDomain\PackagesManagementDomain.csproj", "{420D2C38-36FE-49F2-A5D1-57AD750C62CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackagesManagementDB", "..\PackagesManagementDB\PackagesManagementDB.csproj", "{83AE1F08-01E4-4827-9BDB-69F43B84F990}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{420D2C38-36FE-49F2-A5D1-57AD750C62CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{420D2C38-36FE-49F2-A5D1-57AD750C62CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{420D2C38-36FE-49F2-A5D1-57AD750C62CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83AE1F08-01E4-4827-9BDB-69F43B84F990}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83AE1F08-01E4-4827-9BDB-69F43B84F990}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83AE1F08-01E4-4827-9BDB-69F43B84F990}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83AE1F08-01E4-4827-9BDB-69F43B84F990}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
