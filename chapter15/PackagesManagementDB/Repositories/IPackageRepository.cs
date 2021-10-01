@@ -1,6 +1,7 @@
 ﻿using PackagesManagementDB.Models;
 using PackagesManagementDomain.Aggregates;
 using PackagesManagementDomain.Events;
+using PackagesManagementDomain.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace PackagesManagementDB.Repositories
         }
 
         Task<Package> Get(int id);
+        IUnitOfWork UnitOfWork { get; }
     }
 
 }
