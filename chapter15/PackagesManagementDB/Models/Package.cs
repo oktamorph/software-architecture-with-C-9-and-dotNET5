@@ -29,6 +29,11 @@ namespace PackagesManagementDB.Models
             EndValidityDate = o.EndValidityDate;
         }
 
+        internal void AddDomainEvent(PackageDeleteEvent packageDeleteEvent)
+        {
+            throw new NotImplementedException();
+        }
+
         private void AddDomainEvent(PackagePriceChangedEvent packagePriceChangedEvent)
         {
             throw new NotImplementedException();

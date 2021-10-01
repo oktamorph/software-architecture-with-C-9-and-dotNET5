@@ -11,6 +11,8 @@ namespace PackagesManagementDB.Repositories
 {
     public interface IPackageRepository
     {
+        MainDbContext context { get; }
+
         public async Task<IPackage> Delete(int id)
         {
             var model = await Get(id);
@@ -19,6 +21,8 @@ namespace PackagesManagementDB.Repositories
             model.AddDomainEvent(new PackageDeleteEvent(model.Id, package.EntityVersion));
             return model;
         }
+
+        Task<Package> Get(int id);
     }
 
 }

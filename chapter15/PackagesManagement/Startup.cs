@@ -24,6 +24,8 @@ namespace PackagesManagement
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages();
+            services.AddDbLayer(Configuration.GetConnectionString("DefaultConnection"), "PackagesManagementDB");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +45,7 @@ namespace PackagesManagement
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

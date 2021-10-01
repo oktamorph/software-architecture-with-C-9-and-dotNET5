@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PackagesManagementDomain.IRepository
+namespace PackagesManagementDomain.IRepositories
 {
     public interface IPackageRepository : IRepository<IPackage>
     {
