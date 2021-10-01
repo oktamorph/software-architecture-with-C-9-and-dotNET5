@@ -1,9 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MongoDB.Driver.Core.Configuration;
+using PackagesManagementDB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +27,16 @@ namespace PackagesManagement
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            var migrationAssembly = "";
             services.AddControllersWithViews();
+            services.AddDbContext<MainDbContext>(options =>
+                options.UseSqlServer(connectionString, b => b.MigrationsAssembly(migrationAssembly)));
+            services.AddIdentity<IdentityUser<int>, IdentityRole<int>>()
+                    .AddEntityFrameworkStores<MainDbContext>()
+                    .AddDefaultTokenProviders();
             services.AddRazorPages();
-            services.AddDbLayer(Configuration.GetConnectionString("DefaultConnection"), "PackagesManagementDB");
+            // services.AddDbLayer(Configuration.GetConnectionString("DefaultConnection"), "PackagesManagementDB");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
