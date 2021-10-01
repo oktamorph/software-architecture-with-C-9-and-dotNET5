@@ -10,8 +10,10 @@ using MongoDB.Driver.Core.Configuration;
 using PackagesManagementDB;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Localization;
 
 namespace PackagesManagement
 {
@@ -58,6 +60,21 @@ namespace PackagesManagement
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+
+            // Code to add: configure the localization middleware
+            var ci = new CultureInfo("en-US");
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture(ci),
+                SupportedCultures = new List<CultureInfo>
+                {
+                    ci,
+                },
+                SupportedUICultures = new List<CultureInfo>
+                {
+                    ci,
+                }
+            });
 
             app.UseEndpoints(endpoints =>
             {
