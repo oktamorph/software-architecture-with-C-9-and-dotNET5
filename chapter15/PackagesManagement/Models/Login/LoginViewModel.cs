@@ -1,4 +1,4 @@
-﻿namespace PackagesManagement.Controllers
+﻿namespace PackagesManagement.Models.Login
 {
     public class LoginViewModel
     {
