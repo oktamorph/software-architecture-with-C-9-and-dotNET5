@@ -28,7 +28,7 @@ namespace PackagesManagement
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
-            var migrationAssembly = "";
+            var migrationAssembly = "PackagesManagementDB";
             services.AddControllersWithViews();
             services.AddDbContext<MainDbContext>(options =>
                 options.UseSqlServer(connectionString, b => b.MigrationsAssembly(migrationAssembly)));

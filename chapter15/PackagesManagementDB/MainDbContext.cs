@@ -17,6 +17,9 @@ namespace PackagesManagementDB
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            builder.Entity<Package>()
+                .Property(p => p.Price)
+                .HasColumnType("decimal(18,4");
         }
 
         public async Task StartAsync()
