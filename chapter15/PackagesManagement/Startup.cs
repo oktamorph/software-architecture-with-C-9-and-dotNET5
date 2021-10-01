@@ -14,6 +14,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Localization;
+using PackagesManagement.Tools;
 
 namespace PackagesManagement
 {
@@ -39,6 +40,9 @@ namespace PackagesManagement
                     .AddDefaultTokenProviders();
             services.AddRazorPages();
             // services.AddDbLayer(Configuration.GetConnectionString("DefaultConnection"), "PackagesManagementDB");
+            services.AddAllQueries(this.GetType().Assembly);
+            services.AddAllCommandHandlers(this.GetType().Assembly);
+            services.AddAllEventHandlers(this.GetType().Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
