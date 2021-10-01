@@ -2,6 +2,7 @@
 using PackagesManagementDomain.DTOs;
 using PackagesManagementDomain.Events;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -56,6 +57,8 @@ namespace PackagesManagementDB.Models
         [ConcurrencyCheck]
         public long EntityVersion { get; set; }
         public int DestinationId { get; set; }
+
+        public List<IEventNotification> DomainEvents => throw new NotImplementedException();
     }
 
 }

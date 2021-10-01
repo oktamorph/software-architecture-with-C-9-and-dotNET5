@@ -26,5 +26,10 @@ namespace PackagesManagement.Tools
 
             }
         }
+
+        public Task TriggerEvents(object domainEvents)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
