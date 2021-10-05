@@ -5,3 +5,13 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+<ConfirmedText @bind-Value="textValue" ButtonText="Confirm"></ConfirmedText>
+<p>
+    Confirmed value is: @textValue
+</p>
+
+@code {
+    private string textValue = null;
+}
+
