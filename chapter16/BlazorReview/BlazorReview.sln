@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorReview.Server", "Server\BlazorReview.Server.csproj", "{0EBAD665-4DDB-43BA-9848-C207D2B3C818}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorReview.Server", "Server\BlazorReview.Server.csproj", "{0EBAD665-4DDB-43BA-9848-C207D2B3C818}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorReview.Client", "Client\BlazorReview.Client.csproj", "{527F7B88-2175-45E2-A8FF-CCBA35885CC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorReview.Client", "Client\BlazorReview.Client.csproj", "{527F7B88-2175-45E2-A8FF-CCBA35885CC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorReview.Shared", "Shared\BlazorReview.Shared.csproj", "{BCEE3124-7EDC-4636-A8C9-8FDCAFBA2883}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorReview.Shared", "Shared\BlazorReview.Shared.csproj", "{BCEE3124-7EDC-4636-A8C9-8FDCAFBA2883}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
