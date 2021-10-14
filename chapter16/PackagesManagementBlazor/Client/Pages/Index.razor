@@ -1,7 +1,37 @@
-﻿@page "/"
+﻿@using PackagesManagementBlazor.Client.ViewModels
+@using PackagesManagementBlazor.Shared
+@using PackagesManagementBlazor.Client.Services
+@inject PackagesClient client
+@page "/"
 
-<h1>Hello, world!</h1>
+<h1>Search packages by location</h1>
+<EditForm Model="search" OnValidSubmit="Search">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <div class="form-group">
+        <label for="integerfixed">Insert location starting chars</label>
+        <InputText @bind-Value="search.Location"></InputText>
+        <ValidationMessage For="@( () => search.Location)" />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</EditForm>
+@if (packages != null)
+{
 
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+}
+else if (loading)
+{
+    <p><em>Loading...</em></p>
+}
+@code{
+    SearchViewModel search { get; set; } = new SearchViewModel();
+private IEnumerable<PackageInfosViewModel> packages;
+bool loading;
+async Task Search()
+{
+    packages = null;
+    loading = true;
+    await InvokeAsync(StateHasChanged);
+    packages = await client.GetByLocation(search.Location);
+    loading = false;
+}
+}
