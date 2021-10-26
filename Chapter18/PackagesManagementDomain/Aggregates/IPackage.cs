@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using PackagesManagementDomain.DTOs;
+﻿using PackagesManagementDomain.DTOs;
+using System;
 
 namespace PackagesManagementDomain.Aggregates
 {
@@ -13,7 +11,7 @@ namespace PackagesManagementDomain.Aggregates
         string Description { get; set; }
         decimal Price { get; set; }
         int DurationInDays { get; }
-        DateTime? StartValidityDate { get;  }
+        DateTime? StartValidityDate { get; }
         DateTime? EndValidityDate { get; }
         int DestinationId { get; }
     }

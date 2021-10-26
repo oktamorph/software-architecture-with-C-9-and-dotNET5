@@ -1,5 +1,5 @@
-﻿using System.Threading.Tasks;
-using PackagesManagementDomain.Events;
+﻿using PackagesManagementDomain.Events;
+using System.Threading.Tasks;
 
 namespace PackagesManagement.Tools
 {

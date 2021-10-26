@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PackagesManagementDomain.Events
+﻿namespace PackagesManagementDomain.Events
 {
     public class PackageDeleteEvent : IEventNotification
     {

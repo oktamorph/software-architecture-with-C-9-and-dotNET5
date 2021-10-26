@@ -1,11 +1,11 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PackagesManagement.Commands;
 using PackagesManagement.Models;
 using PackagesManagement.Queries;
 using PackagesManagement.Tools;
 using PackagesManagementDomain.IRepositories;
+using System.Threading.Tasks;
 
 namespace PackagesManagement.Controllers
 {

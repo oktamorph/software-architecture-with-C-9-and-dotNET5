@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using PackagesManagementDomain.Events;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using PackagesManagementDomain.Events;
 
 namespace PackagesManagement.Tools
 {

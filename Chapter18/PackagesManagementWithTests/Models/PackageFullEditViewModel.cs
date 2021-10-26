@@ -1,11 +1,7 @@
-﻿using PackagesManagementDB.Models;
-using PackagesManagementDomain.Aggregates;
+﻿using PackagesManagementDomain.Aggregates;
 using PackagesManagementDomain.DTOs;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PackagesManagement.Models
 {
@@ -25,12 +21,12 @@ namespace PackagesManagement.Models
         }
         public int Id { get; set; }
         [Display(Name = "name")]
-        [StringLength(128, MinimumLength = 5), Required]        
+        [StringLength(128, MinimumLength = 5), Required]
         public string Name { get; set; }
         [Display(Name = "package infos")]
-        [StringLength(128, MinimumLength = 10), Required]        
+        [StringLength(128, MinimumLength = 10), Required]
         public string Description { get; set; }
-        [Display(Name="price")]
+        [Display(Name = "price")]
         [Range(0, 100000)]
         public decimal Price { get; set; }
         [Display(Name = "duration in days")]

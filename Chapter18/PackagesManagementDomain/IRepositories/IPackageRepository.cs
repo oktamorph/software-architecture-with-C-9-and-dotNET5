@@ -1,7 +1,4 @@
 ﻿using PackagesManagementDomain.Aggregates;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace PackagesManagementDomain.IRepositories

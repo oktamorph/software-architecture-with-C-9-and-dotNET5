@@ -3,9 +3,6 @@ using PackagesManagement.Commands;
 using PackagesManagement.Tools;
 using PackagesManagementDB.Repositories;
 using PackagesManagementDomain.Aggregates;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace PackagesManagement.Handlers
@@ -34,7 +31,7 @@ namespace PackagesManagement.Handlers
                     await repo.UnitOfWork.SaveEntitiesAsync();
                     done = true;
                 }
-                catch(DbUpdateConcurrencyException)
+                catch (DbUpdateConcurrencyException)
                 {
                     // add some logic here
                 }

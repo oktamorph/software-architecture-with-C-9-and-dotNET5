@@ -1,5 +1,3 @@
-using System;
-
 namespace PackagesManagement.Models
 {
     public class ErrorViewModel
