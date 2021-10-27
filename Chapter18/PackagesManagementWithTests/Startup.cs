@@ -34,7 +34,6 @@ namespace PackagesManagement
                     .AddEntityFrameworkStores<MainDbContext>()
                     .AddDefaultTokenProviders();
             services.AddRazorPages();
-            // services.AddDbLayer(Configuration.GetConnectionString("DefaultConnection"), "PackagesManagementDB");
             services.AddAllQueries(this.GetType().Assembly);
             services.AddAllCommandHandlers(this.GetType().Assembly);
             services.AddAllEventHandlers(this.GetType().Assembly);
